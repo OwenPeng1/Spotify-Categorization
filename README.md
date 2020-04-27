@@ -1,2 +1,16 @@
 # Spotify-Categorization
-I am categorizing Spotify songs into genres based on their attributes. 
+
+Presentation Link - https://docs.google.com/presentation/d/1yUxTgZ9_iZqJhu-rfp1xKjW04gCKewPXEAsIFrt0SFo/edit?usp=sharing
+
+This was an individual project done as part of my Flatiron School Data Science Bootcamp. Given Spotify’s expansive library of songs, I wanted to build a classification model that would assign songs into genres based on their attributes. Spotify classifies each song in its library based on quantitative attributes that allow users to objectively characterize each song. I found interest in this project, because I wanted to turn quantitative measurements, song attributes into qualitative categorizations, genres.
+
+The dataset we looked at were songs from the Spotify Top 100 charts. To start, we scraped a list of songs that had reached the Top 100 on Spotify’s charts. After obtaining a list of song names, we used the Python module, SpotPy to obtain information on the song such as song attributes, artist name, and popularity. Using the song attributes, I used the classification algorithms, K-Nearest Neighbors, Random Forest, and XG Boost to classify songs into feature engineered genre classifications
+
+The preliminary classification was a K-Nearest Neighbors model. The preliminary run was done without feature engineering of genres. The songs were sorted into 384 genres and the initial KNN analysis returned an accuracy score of 9.84% accuracy. The accuracy was clearly poor, but a ten percent accuracy score for placing songs into 384 genre classifications was significantly more accurate than random chance. As a result, I knew that with a narrowing down of genre classifications, my model would achieve a higher accuracy score
+
+To better improve the accuracy of my classification model, genre consolidation would have to be done. From the 384 initial genre classifications, I narrowed down the genres into the six genres of Rock, R&B, EDM, Latin, Pop, and Rap. Some condensing was easier than others. Some choices such as UK Rock being placed into Rock, and K-Pop being placed into Pop were easier choices. Other choices were debatable from a music perspective. The soul music genre was condensed in R&B while the folk genre was condensed into Rock. While the feature engineering could be debated, six broader genre categories were created at the end.
+
+Post condensation of genres, the accuracy scores were much improved. From the ten percent accuracy with 384 genre categories, a maximum 74.7% accuracy score was achieved with a KNN analysis. Accuracy scores of 61.7% and 55.4% were achieved with XG Boost and Random Forest respectively. Of these scores, the KNN analysis was deemed to be best for genre classifications
+
+The analysis of song attributes was very insightful to the nature of how songs were classified. The key attributes for determining a song’s genre were its speechiness and danceability. This was an interesting case of our classification model supporting insights into music genres. It is intuitive that speechiness was a key differentiator for music genres. The rap genre features a high amount of speech in its songs while genres such as EDM have less words in them. Danceability also differentiates genres such as Latin from others such as Rock music. My analysis also indicated that factors such as duration of a song and instrumentals played a very little part of determined a song’s genre, indicating that songs of different genres varied very little in these attribute categories
+
